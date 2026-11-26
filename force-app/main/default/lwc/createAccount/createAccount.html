@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Create Account">
+        <lightning-input label="Enter Name" value={name} name="name" onchange={inputHandler}></lightning-input>
+        <lightning-input label="Enter Rating" value={rating} name="rating" onchange={inputHandler}></lightning-input>
+        <lightning-input label="Enter Industry" value={industry} name="industry" onchange={inputHandler}></lightning-input>
+        <lightning-button onclick={createData} label="Create"></lightning-button>
+        <template if:true={accData.length}>
+            <div style="height: 300px;">
+                <lightning-datatable
+                        key-field="id"
+                        data={accData}
+                        columns={columns}>
+                </lightning-datatable>
+            </div>
+        </template>
+    </lightning-card>
+</template>

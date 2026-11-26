@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Create Record">
+        <lightning-input label="Enter Name" value={name} onkeyup={handleInput}></lightning-input>
+        <template if:true={options.length}>
+            <lightning-combobox
+            name="industry"
+            label="Industry"
+            value={value}
+            placeholder="Select Industry"
+            options={options}
+            onchange={handleChange} ></lightning-combobox>
+            </template>
+        <lightning-button label="Create" onclick={handleCreate}></lightning-button>
+    </lightning-card>
+</template>

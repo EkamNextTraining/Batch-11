@@ -1,0 +1,52 @@
+<template>
+    <lightning-card title="Accounts Data">
+        <template for:each={accounts.data} for:item="acc">
+            <p key={acc.Id}>{acc.Name}</p>
+        </template> 
+    </lightning-card>
+    <lightning-card title="Contacts Data">
+        <template if:true={contactRecords.length}>
+            <div style="height: 300px;">
+                <lightning-datatable
+                        key-field="id"
+                        data={contactRecords}
+                        columns={columns}>
+                </lightning-datatable>
+            </div>
+        </template>
+    </lightning-card>
+    <lightning-card title="Opportunities Data">
+        <lightning-input label="Search Key" value={userInput} onchange={inputHandler}></lightning-input>
+        <template if:true={oppRecords.length}>
+            <div style="height: 300px;">
+                <lightning-datatable
+                        key-field="id"
+                        data={oppRecords}
+                        columns={oppColumns}>
+                </lightning-datatable>
+            </div>
+
+
+            <table class="table">
+                <tr class="tr">
+                    <th class="th">Name</th>
+                    <th class="th">Stage Name</th>
+                    <th class="th">Close Date</th>
+                    <th class="th">Delete</th>
+                </tr>
+                <template for:each={oppRecords} for:item="opp">
+                    <tr class="tr" key={opp.Id}>
+                        <td class="td">{opp.Name}</td>
+                        <td class="td">{opp.StageName}</td>
+                        <td class="td">{opp.Closedate}</td>
+                        <td class="td">
+                            <lightning-icon data-recordid={opp.Id} icon-name='utility:delete' alternative-text='delete' variant='error' size='small' title='delete' onclick={deleteRecord}></lightning-icon>
+                        </td>
+                    </tr>       
+                </template> 
+            </table>
+
+
+        </template>
+    </lightning-card>
+</template>

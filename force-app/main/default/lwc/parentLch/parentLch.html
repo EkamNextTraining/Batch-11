@@ -1,0 +1,10 @@
+<template>
+    <lightning-card label="Parent LCH" title="Parent LCH">
+        <lightning-input label="Enter Message" value={message} onchange={inputHandler}></lightning-input>
+        <lightning-button label="Show Child" onclick={showChild}></lightning-button>
+        <lightning-button label="Hide Child" onclick={hideChild}></lightning-button>
+        <template if:true={showChildLwc}>
+            <c-child-lch msg={message}></c-child-lch>
+        </template>
+    </lightning-card>
+</template>

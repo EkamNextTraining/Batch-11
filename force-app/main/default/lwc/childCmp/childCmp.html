@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Child Cmp">
+        <p>First Name: {firstName}</p>
+        <p>Last Name: {lastName}</p>
+        <p>Email: {email}</p>
+        <p>FullName: {fullName}</p>
+
+        <lightning-input label="Enter Phone" value={phone} name="phone" onchange={inputHandler}></lightning-input>
+    </lightning-card>
+</template>

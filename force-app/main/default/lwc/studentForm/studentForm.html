@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Student Form">
+        <div class="slds-var-p-around_medium">
+            <lightning-input label="Enter First Name" value={fname} name="fname" onchange={fnameHandler}></lightning-input>
+            <lightning-input label="Enter Last Name" value={lname} name="lname" onchange={lnameHandler}></lightning-input>
+            <lightning-input label="Enter Age" value={age} name="age" onchange={ageHandler}></lightning-input>    
+            <lightning-input label="Enter City" value={city} name="city" onchange={cityHandler}></lightning-input>    
+            <lightning-input label="Enter Phone" value={phone} name="phone" onchange={phoneHandler}></lightning-input>    
+            <lightning-input label="Enter Email" value={email} name="email" onchange={emailHandler}></lightning-input>    
+            
+            <lightning-button-group>
+                <lightning-button label="Save" onclick={displayData}></lightning-button>
+                <lightning-button label="Clear" onclick={clearData}></lightning-button>
+            </lightning-button-group>
+            <template if:true={showData}>
+                <p>Student Details:</p>
+                <p>Name : {fullName}</p>
+                <p>Age : {age}</p>
+                <p>City : {city}</p>
+                <p>Phone : {phone}</p>
+                <p>Email : {email}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

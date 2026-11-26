@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Parent Cmp">
+        <lightning-input label="Enter First Name" value={fname} name="fname" onchange={inputHandler}></lightning-input>
+        <lightning-input label="Enter Last Name" value={lname} name="lname" onchange={inputHandler}></lightning-input>
+        <lightning-input label="Enter Email" value={email} name="email" onchange={inputHandler}></lightning-input>
+        <p>Phone: {phone}</p>
+        <c-child-cmp first-name={fname} last-name={lname} email={email} onsenddata={eventHandle}></c-child-cmp>
+    </lightning-card>
+</template>
